@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent (typeof (Rigidbody))]
 public class RacketController : MonoBehaviour {
 	public Vector3 velocity;
-	public float maxPosition;
+	public float sensitivity;
 
 	private Vector3 defaultPosition;
 	private Vector3 currentPosition;
@@ -22,11 +22,8 @@ public class RacketController : MonoBehaviour {
 	
 	// use FixedUpdate for rigidbody
 	void FixedUpdate () {
-		if (Input.GetKey (KeyCode.Space)) {
-			this.currentPosition = this.currentPosition + this.velocity * Time.deltaTime;
-		} else {
-			this.currentPosition = this.defaultPosition;
-		}
+		var delta = Input.GetAxis ("Mouse Y");
+		this.currentPosition.y += delta * this.sensitivity;
 
 		this.SetPosition (this.currentPosition);
 		//this.SetRotatation (this.currentRotation);
@@ -34,7 +31,7 @@ public class RacketController : MonoBehaviour {
 
 	void SetPosition (Vector3 pos) {
 		Vector3 delta = pos - this.transform.position;
-		this.rigidbody.AddForce (delta * 100);
+		this.rigidbody.AddForce (delta * 1000);
 	}
 
 	void SetRotatation (Quaternion rot) {
