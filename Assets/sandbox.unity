@@ -338,18 +338,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &2063816942
-BoxCollider:
+--- !u!64 &2063816942
+MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063816939}
-  m_Material: {fileID: 13400000, guid: 5c3070dfd8112fb499f74cda3ee87e17, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .25, y: .189999998, z: .730000019}
-  m_Center: {x: 0, y: -.0900000036, z: 0}
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: a01cc3450f7e65b46bd4aa12ed5d8e9c, type: 3}
 --- !u!114 &2063816944
 MonoBehaviour:
   m_ObjectHideFlags: 0
