@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent (typeof (Rigidbody))]
 public class KeepAwake : MonoBehaviour {
 	private Rigidbody rigidbody;
 

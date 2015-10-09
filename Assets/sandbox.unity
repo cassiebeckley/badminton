@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd97356ac7abe24d9a88b91f8bc4501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdiePrefab: {fileID: 445768, guid: 2cfc5d8ad53a1464ca45b44bebe071e9, type: 2}
+  birdiePrefab: {fileID: 408840, guid: 2cfc5d8ad53a1464ca45b44bebe071e9, type: 2}
 --- !u!4 &1240214806
 Transform:
   m_ObjectHideFlags: 0
@@ -344,7 +344,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063816939}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5c3070dfd8112fb499f74cda3ee87e17, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
