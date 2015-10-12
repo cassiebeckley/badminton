@@ -4,7 +4,8 @@ using System.Collections;
 [RequireComponent (typeof (Rigidbody))]
 public class RacketController : MonoBehaviour {
 	public Vector3 velocity;
-	public float sensitivity;
+	public float xSensitivity;
+	public float ySensitivity;
 
 	private Vector3 defaultPosition;
 	private Vector3 currentPosition;
@@ -22,8 +23,11 @@ public class RacketController : MonoBehaviour {
 	
 	// use FixedUpdate for rigidbody
 	void FixedUpdate () {
-		var delta = Input.GetAxis ("Mouse Y");
-		this.currentPosition.y += delta * this.sensitivity;
+		var deltaY = Input.GetAxis ("Mouse Y");
+		this.currentPosition.y += deltaY * this.ySensitivity;
+
+		var deltaX = Input.GetAxis ("Mouse X");
+		this.currentPosition.x += deltaX * this.xSensitivity;
 
 		this.SetPosition (this.currentPosition);
 		//this.SetRotatation (this.currentRotation);
