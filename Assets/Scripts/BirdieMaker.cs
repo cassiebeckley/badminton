@@ -11,7 +11,7 @@ public class BirdieMaker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.S)) {
+		if (SixenseInput.GetController (SixenseHands.RIGHT).GetButtonDown(SixenseButtons.BUMPER)) {
 			Instantiate (birdiePrefab, this.transform.position, Quaternion.identity);
 		}
 	}
