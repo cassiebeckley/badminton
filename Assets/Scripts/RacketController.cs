@@ -11,7 +11,8 @@ public class RacketController : MonoBehaviour {
 
 	private Vector3 defaultPosition;
 	private Vector3 currentPosition;
-
+	
+	private Quaternion lastRotation;
 	private Quaternion currentRotation;
 
 	private Rigidbody rigidbody;
@@ -32,12 +33,15 @@ public class RacketController : MonoBehaviour {
 		//this.currentPosition.x += deltaX * this.xSensitivity;
 		var controller = SixenseInput.GetController (this.hand);
 
-		// convert to meters
-		this.currentPosition = controller.Position / 1000 + this.defaultPosition;
-		this.currentRotation = controller.Rotation;
+		if (controller != null && controller.Enabled) {
 
-		this.SetPosition (this.currentPosition);
-		this.SetRotatation (this.currentRotation);
+			// convert to meters
+			this.currentPosition = controller.Position / 1000 + this.defaultPosition;
+			this.currentRotation = controller.Rotation;
+
+			this.SetPosition (this.currentPosition);
+			this.SetRotatation (this.currentRotation);
+		}
 	}
 
 	void SetPosition (Vector3 pos) {
@@ -47,7 +51,6 @@ public class RacketController : MonoBehaviour {
 
 	void SetRotatation (Quaternion rot) {
 		Vector3 delta = (rot * Quaternion.Inverse(this.transform.rotation)).eulerAngles;
-		//this.transform.rotation = this.currentRotation;
 
 		if ( delta.x > 180 ) delta.x -= 360;
 		if ( delta.y > 180 ) delta.y -= 360;
@@ -56,6 +59,8 @@ public class RacketController : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.F)) {
 			print (delta);
 		}
-		this.rigidbody.AddTorque(delta * 1);
+		this.rigidbody.AddTorque(delta * 100);
+		//this.lastRotation = this.transform.rotation;
+		//this.transform.rotation = rot;
 	}
 }

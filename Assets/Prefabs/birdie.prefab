@@ -149,6 +149,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 408840}
+  - 114: {fileID: 11495436}
   m_Layer: 0
   m_Name: birdie
   m_TagString: Untagged
@@ -567,6 +568,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7726f94d46e563e40bb8a4fa14b2313a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11495436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975100e8dc9a0144eb8c1ba92468f014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!138 &13869250
